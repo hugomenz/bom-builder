@@ -1,27 +1,29 @@
-# Smartworks
+# StüliTech
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+StüliTech is a powerful tool for managing and organizing your bill of materials (BOM) for mechanical assemblies. With StüliTech, you can easily import and export CSV files to create and edit your BOMs, and generate professional PDFs for your projects.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Import and export CSV files
+- Edit and update your BOMs in real-time
+- Generate professional PDFs for your projects
+- Customizable layout and styling options
+- Intuitive and user-friendly interface
 
-## Code scaffolding
+## How to use
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To get started with StüliTech, simply drag and drop your CSV file into the designated area on the main screen. You can then edit and update your BOM as needed, and generate a PDF by clicking the "Export" button.
 
-## Build
+## Requirements
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular 6+
+- RxJS 6+
+- ngx-papaparse
 
-## Running unit tests
+## Contributing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+We welcome contributions to StüliTech! If you have an idea for a new feature or have found a bug, please open an issue on our GitHub repository.
 
-## Running end-to-end tests
+## License
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+StüliTech is licensed under the MIT license. See the LICENSE file for more information.
