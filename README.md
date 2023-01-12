@@ -4,7 +4,7 @@ StüliTech is a powerful tool for managing and organizing your bill of materials
 
 ## DEMO
 
-https://hugomenz.github.io/bom-builder/bom-builder/
+https://hugomenz.github.io/bom-builder/
 
 ## Features
 
