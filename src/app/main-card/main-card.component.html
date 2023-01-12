@@ -1,34 +1,57 @@
-<mat-card class="card">
-  <mat-card-header>
-    <mat-card-title>Stüli Builder</mat-card-title>
-  </mat-card-header>
+<div class="content-box">
+  <mat-card class="card" *ngIf="this.dataEmpty">
+    <mat-card-header>
+      <mat-card-title>Stüli Builder</mat-card-title>
+    </mat-card-header>
 
-  <mat-card-content>
-    <div class="dropzone" fileDragDrop (change)="onFileDropped($event)">
-      <div class="text-wrapper">
-        <div class="centered">
-          <input
-            matInput
-            type="file"
-            name="file"
-            id="file"
-            (change)="onFileDropped($event)"
-            multiple
-          />
-          <label class="text-link df fcol fcc" for="file">
-            <span class="text-file">
-              Klicken Sie hier, um Ihre Datei hochzuladen
-            </span>
-            oder ziehen Sie die Datei direkt hierher!
-          </label>
+    <mat-card-content>
+      <div class="dropzone" fileDragDrop>
+        <div class="text-wrapper">
+          <div class="centered">
+            <input
+              matInput
+              type="file"
+              name="file"
+              id="file"
+              (change)="parseText($event)"
+              multiple
+            />
+            <label class="text-link df fcol fcc" for="file">
+              <span class="text-file">
+                Klicken Sie hier, um Ihre Datei hochzuladen
+              </span>
+              oder ziehen Sie die Datei direkt hierher!
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </mat-card-content>
+    </mat-card-content>
 
-  <mat-card-actions>
-    <button mat-raised-button (click)="onButtonPaste()">
-      Text hinzufügen...
-    </button>
-  </mat-card-actions>
-</mat-card>
+    <mat-card-actions>
+      <button mat-raised-button (click)="onButtonPaste()">
+        Text hinzufügen...
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="container" *ngIf="!this.dataEmpty">
+    <button (click)="this.dataEmpty = !this.dataEmpty">New List</button>
+    <table mat-table [dataSource]="this.dataSource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <ng-container
+        *ngFor="let column of displayedColumns; let i = index"
+        [matColumnDef]="column"
+      >
+        <th mat-header-cell *matHeaderCellDef>
+          {{ column }}
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
