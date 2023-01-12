@@ -2,6 +2,10 @@
 
 StüliTech is a powerful tool for managing and organizing your bill of materials (BOM) for mechanical assemblies. With StüliTech, you can easily import and export CSV files to create and edit your BOMs, and generate professional PDFs for your projects.
 
+## DEMO
+
+https://hugomenz.github.io/bom-builder/bom-builder/
+
 ## Features
 
 - Import and export CSV files
