@@ -6,6 +6,8 @@ StüliTech is a powerful tool for managing and organizing your bill of materials
 
 https://hugomenz.github.io/bom-builder/
 
+<a href="https://github.com/hugomenz/bom-builder/blob/main/src/assets/test_list.csv" download>Click to Download a Test CSV File from bom-builder/src/assets/</a>
+
 ## Features
 
 - Import and export CSV files
