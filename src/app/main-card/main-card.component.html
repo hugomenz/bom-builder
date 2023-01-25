@@ -1,5 +1,5 @@
 <div class="content-box">
-  <mat-card class="card" *ngIf="this.dataEmpty">
+  <mat-card class="card" *ngIf="this.csv.dataEmpty">
     <mat-card-header>
       <mat-card-title>Stüli Builder</mat-card-title>
     </mat-card-header>
@@ -13,7 +13,7 @@
               type="file"
               name="file"
               id="file"
-              (change)="parseText($event)"
+              (change)="onFileDropped($event)"
               multiple
             />
             <label class="text-link df fcol fcc" for="file">
@@ -34,12 +34,9 @@
     </mat-card-actions>
   </mat-card>
 
-  <div class="container" *ngIf="!this.dataEmpty">
-    <button (click)="this.dataEmpty = !this.dataEmpty">New List</button>
+  <div class="container" *ngIf="!this.csv.dataEmpty">
+    <button (click)="this.csv.dataEmpty = !this.csv.dataEmpty">New List</button>
     <table mat-table [dataSource]="this.dataSource" class="mat-elevation-z8">
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
       <ng-container
         *ngFor="let column of displayedColumns; let i = index"
         [matColumnDef]="column"
