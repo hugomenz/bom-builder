@@ -1,5 +1,5 @@
 export interface Item {
-  id: string;
+  pos: string;
   code: string;
   desc1: string;
   desc2: string;

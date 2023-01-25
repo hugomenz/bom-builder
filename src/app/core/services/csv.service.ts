@@ -43,7 +43,7 @@ export class CsvService {
             // skip position 0 for headers
             result.data.slice(1, -1).map((element: string[]) => {
               this.data.push({
-                id: element[0],
+                pos: element[0],
                 code: element[1],
                 desc1: element[2],
                 desc2: element[3],
