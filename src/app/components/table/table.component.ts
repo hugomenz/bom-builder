@@ -29,6 +29,15 @@ export class TableComponent implements OnChanges {
 
   constructor(public csv: CsvService) {}
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    console.log(filterValue);
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
   getData(files: any) {
     this.csv.csvParser(files).then((result) => {
       this.mainCsvData = result;
@@ -44,6 +53,8 @@ export class TableComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['droppedFile']) {
       this.getData(changes['droppedFile'].currentValue);
+    } else if (changes['dataSource']) {
+      this.getData(this.droppedFile);
     }
   }
 }
