@@ -40,7 +40,6 @@
       mat-table
       [dataSource]="this.dataSource"
       matSort
-      (matSortChange)="sortColumn($event)"
       class="mat-elevation-z8"
     >
       <ng-container
@@ -58,5 +57,11 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
+    <mat-paginator
+      showFirstLastButtons="true"
+      [pageSizeOptions]="[16, 32, 48]"
+      aria-label="Select page"
+    >
+    </mat-paginator>
   </div>
 </div>
