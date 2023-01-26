@@ -1,0 +1,79 @@
+.content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .card {
+  display: flex;
+  flex-direction: column;
+
+
+
+  border: 1px solid red;
+} */
+
+mat-card {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 30vw;
+  height: 60vh;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  & button {
+    margin: 1rem;
+    width: 100%;
+  }
+}
+mat-card-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.text-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.centered {
+  font-family: sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  height: 100%;
+
+  & input {
+    height: 100%;
+  }
+}
+
+.dropzone {
+  height: 200px;
+  display: table;
+  width: 100%;
+  background-color: #444;
+  border: dotted 2px #aaa;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.text-file {
+  padding: 0.4rem;
+}
+
+.text-link {
+  height: 100%;
+  width: 100%;
+}

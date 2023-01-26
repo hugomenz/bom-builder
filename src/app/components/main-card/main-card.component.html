@@ -1,0 +1,41 @@
+<div class="content-box">
+  <mat-card class="card" *ngIf="!droppedFile">
+    <mat-card-header>
+      <mat-card-title>Stüli Builder</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="dropzone" fileDragDrop>
+        <div class="text-wrapper">
+          <div class="centered">
+            <input
+              matInput
+              type="file"
+              name="file"
+              id="file"
+              (change)="onFileDropped($event)"
+              multiple
+            />
+            <label class="text-link df fcol fcc" for="file">
+              <span class="text-file">
+                Klicken Sie hier, um Ihre Datei hochzuladen
+              </span>
+              oder ziehen Sie die Datei direkt hierher!
+            </label>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="onButtonPaste()">
+        Text hinzufügen...
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="container" *ngIf="droppedFile">
+    <button (click)="droppedFile = false">New List</button>
+    <app-table [droppedFile]="droppedFile"></app-table>
+  </div>
+</div>
