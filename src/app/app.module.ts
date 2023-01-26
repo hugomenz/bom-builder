@@ -4,29 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainCardComponent } from './main-card/main-card.component';
-
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MainCardComponent } from './components/main-card/main-card.component';
+import { TableComponent } from './components/table/table.component';
+import { AngularMaterialModule } from './angular-material.module';
 
 @NgModule({
-  declarations: [AppComponent, MainCardComponent],
+  declarations: [AppComponent, MainCardComponent, TableComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
+    AngularMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
