@@ -7,6 +7,8 @@ import { Item } from '../interfaces/item';
   providedIn: 'root',
 })
 export class CsvService {
+  headerList!: string[];
+
   data: Item[] = [] as Item[];
   dataEmpty: boolean = true;
 
@@ -40,6 +42,7 @@ export class CsvService {
 
             this.data = [];
 
+            this.headerList = result.data.slice(0, 1);
             // skip position 0 for headers
             result.data.slice(1, -1).map((element: string[]) => {
               this.data.push({

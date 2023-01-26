@@ -33,7 +33,7 @@
       </button>
     </mat-card-actions>
   </mat-card>
-
+  <mat-spinner *ngIf="spinner"></mat-spinner>
   <div class="container" *ngIf="droppedFile">
     <button (click)="droppedFile = false">New List</button>
     <app-table [droppedFile]="droppedFile"></app-table>
