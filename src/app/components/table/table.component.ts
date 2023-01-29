@@ -1,4 +1,11 @@
 import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import {
   Component,
   Input,
   OnChanges,
@@ -11,23 +18,42 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Item } from 'src/app/core/interfaces/item';
 import { CsvService } from 'src/app/core/services/csv.service';
+import { LocalStorageService } from 'src/app/core/services/localstorage.service';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({ height: '0px', minHeight: '0' })),
+      state('expanded', style({ height: '*' })),
+      transition(
+        'expanded <=> collapsed',
+        animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')
+      ),
+    ]),
+  ],
 })
-export class TableComponent implements OnChanges {
+export class TableComponent implements OnChanges, OnInit {
   mainCsvData: any;
   dataSource: MatTableDataSource<Item> = new MatTableDataSource<Item>([]);
   displayedColumns = ['pos', 'code', 'desc1', 'desc2', 'dimension', 'quantity'];
 
-  @Input() droppedFile!: any;
+  columnsToDisplayWithExpand = [...this.displayedColumns, 'expand'];
+  expandedElement: any | null;
 
+  @Input() droppedFile!: any;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(public csv: CsvService) {}
+  // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // mock file variables block
+  @Input() data!: any;
+  //
+  // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  constructor(public csv: CsvService, private _storage: LocalStorageService) {}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -38,6 +64,24 @@ export class TableComponent implements OnChanges {
       this.dataSource.paginator.firstPage();
     }
   }
+  // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // MOCKED FILE BLOCK
+  //
+  ngOnInit(): void {
+    this.getMockedData();
+  }
+
+  getMockedData() {
+    this.mainCsvData = this.data;
+    this.dataSource = new MatTableDataSource<Item>(this.mainCsvData);
+    setTimeout(() => {
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    });
+  }
+  //
+  //MOCKED FILE BLOCK
+  // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   getData(files: any) {
     this.csv.csvParser(files).then((result) => {
       this.mainCsvData = result;
