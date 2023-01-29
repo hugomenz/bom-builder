@@ -1,7 +1,8 @@
 <div class="content-box">
-  <mat-card class="card" *ngIf="!mockedFileData">
+  <!-- <mat-card class="card" *ngIf="!mockedFileData"> -->
+  <mat-card class="card" *ngIf="!droppedFile">
     <mat-card-header>
-      <mat-card-title>Stüli Builder</mat-card-title>
+      <mat-card-title><h1>Stüli Builder</h1></mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
@@ -33,8 +34,10 @@
     </mat-card-actions>
   </mat-card>
   <mat-spinner *ngIf="spinner"></mat-spinner>
-  <div class="container" *ngIf="mockedFileData">
+  <!-- <div class="container" *ngIf="mockedFileData"> -->
+  <div class="container" *ngIf="droppedFile">
     <button (click)="droppedFile = false">New List</button>
-    <app-table [droppedFile]="droppedFile" [data]="mockedFileData"></app-table>
+    <!-- <app-table [droppedFile]="droppedFile" [data]="mockedFileData"></app-table> -->
+    <app-table [droppedFile]="droppedFile"></app-table>
   </div>
 </div>

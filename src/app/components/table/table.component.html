@@ -1,4 +1,5 @@
 <div>
+  <!-- filter -->
   <mat-form-field class="filter" color="warning">
     <mat-label>Filter</mat-label>
     <input
@@ -8,6 +9,7 @@
       #input
     />
   </mat-form-field>
+  <!-- filter -->
 
   <table
     multiTemplateDataRows
@@ -28,6 +30,7 @@
         {{ element[column.toLowerCase()] }}
       </td>
     </ng-container>
+
     <!-- expanded -->
     <ng-container matColumnDef="expand">
       <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
@@ -58,22 +61,46 @@
         [attr.colspan]="columnsToDisplayWithExpand.length"
       >
         <div
-          class="example-element-detail"
+          class="expanded-row"
           [@detailExpand]="
             element == expandedElement ? 'expanded' : 'collapsed'
           "
         >
-          <div class="example-element-diagram">
-            <div class="example-element-position">{{ element.pos }}</div>
-            <div class="example-element-symbol">{{ element.code }}</div>
+          <div class="expanded-main df fcol">
+            <div class="expanded-art-num">{{ element.code }}</div>
+            <div>version 0.0</div>
           </div>
-          <div class="example-element-description">
-            <div class="example-element-name">{{ element.desc1 }}</div>
-            <div class="example-element-weight">{{ element.desc2 }}</div>
-            {{ element.dimension }}
-            <span class="example-element-description-attribution">
-              -- TESTESTES
-            </span>
+          <div class="expanded-details df">
+            <div class="expanded-comments"><b>Kommentare:</b></div>
+            <div class="expanded-logs"><b>Änderungen Verlauf:</b></div>
+            <div class="expanded-extra df fcol">
+              <div class="item-options">
+                <button
+                  mat-icon-button
+                  color="warning"
+                  aria-label="Example icon button with a home icon"
+                >
+                  <mat-icon>save</mat-icon>
+                </button>
+                <button
+                  mat-icon-button
+                  color="warning"
+                  aria-label="Example icon button with a home icon"
+                >
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button
+                  mat-icon-button
+                  color="warning"
+                  aria-label="Example icon button with a home icon"
+                >
+                  <mat-icon>delete_forever</mat-icon>
+                </button>
+              </div>
+              <div class="expanded-doku">
+                <button mat-raised-button color="accent">Dokumentation</button>
+              </div>
+            </div>
           </div>
         </div>
       </td>

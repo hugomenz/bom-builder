@@ -1,0 +1,15 @@
+<div>
+  <mat-toolbar
+    color="primary"
+    class="mat-elevation-z6"
+    style="position: sticky; top: 0"
+  >
+    <div class="content df">
+      <span>SmartWorks</span>
+      <app-theme
+        (darkModeSwitched)="switchMode($event)"
+        [isDarkMode]="isDarkMode"
+      ></app-theme>
+    </div>
+  </mat-toolbar>
+</div>

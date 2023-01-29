@@ -15,39 +15,81 @@ tr.example-detail-row {
 }
 
 tr.example-element-row:not(.example-expanded-row):hover {
-  background: #333;
+  //background: #333;
 }
 
 tr.example-element-row:not(.example-expanded-row):active {
-  background: #555;
+  //background: #555;
 }
 
 .example-element-row td {
   border-bottom-width: 0;
 }
 
-.example-element-detail {
+.expanded-row {
   overflow: hidden;
   display: flex;
 }
 
-.example-element-diagram {
-  min-width: 80px;
-  border: 2px solid black;
-  padding: 8px;
-  font-weight: lighter;
+.expanded-main {
+  width: 15%;
+  justify-content: space-between;
   margin: 8px 0;
-  height: 104px;
+  padding: 8px;
+  min-width: 80px;
+  height: 120px;
+  font-weight: lighter;
+  //border: 2px solid black;
 }
 
-.example-element-symbol {
+.expanded-details {
+  width: 85%;
+}
+
+.expanded-art-num {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 32px;
   line-height: normal;
 }
 
-.example-element-description {
-  padding: 16px;
+.expanded-comments {
+  width: 40%;
+  margin: 24px 0;
+  padding: 8px;
+  border: 1px solid #777;
+  //border: 1px solid red;
+}
+
+.expanded-logs {
+  width: 40%;
+  margin: 24px 8px;
+  padding: 8px;
+  border: 1px solid #777;
+}
+
+.expanded-extra {
+  justify-content: space-between;
+  width: 20%;
+  margin: 8px 8px;
+  padding: 8px;
+  //border: 1px solid red;
+}
+
+.item-options {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+  padding: 8px;
+  //border: 1px solid blue;
+}
+
+.expanded-doku {
+  //border: 1px solid green;
+  height: 60%;
+  & button {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .example-element-description-attribution {

@@ -10,6 +10,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 const materialModules = [
   MatFormFieldModule,
@@ -22,7 +23,9 @@ const materialModules = [
   MatProgressSpinnerModule,
   MatInputModule,
   MatIconModule,
+  MatSlideToggleModule,
 ];
+
 @NgModule({
   imports: [CommonModule, ...materialModules],
   exports: [...materialModules],

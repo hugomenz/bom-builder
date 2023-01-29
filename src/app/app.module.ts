@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainCardComponent } from './components/main-card/main-card.component';
 import { TableComponent } from './components/table/table.component';
-import { AngularMaterialModule } from './angular-material.module';
+import { AngularMaterialModule } from './modules/angular-material.module';
+import { ThemeComponent } from './components/theme/theme.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [AppComponent, MainCardComponent, TableComponent],
+  declarations: [AppComponent, MainCardComponent, TableComponent, ThemeComponent, ToolbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,20 @@
+$app-typography: mat-typography-config(
+  $font-family: "Roboto",
+  $title: mat-typography-level(24px, 32px, bold),
+  $body-1: mat-typography-level(18px, 24px, 500),
+  $caption: mat-typography-level(16px, 24px, 500),
+);
+
+@mixin app-typography($typography: $app-typography) {
+  @include mat-base-typography($typography);
+  @include mat-card-typography($typography);
+  @include mat-select-typography($typography);
+  @include mat-form-field-typography($typography);
+  @include mat-slide-toggle-typography($typography);
+  @include mat-toolbar-typography($typography);
+  @include mat-table-typography($typography);
+  @include mat-paginator-typography($typography);
+
+  // custom component typography
+  @include app-root-typography($typography);
+}

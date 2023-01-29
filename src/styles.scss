@@ -7,7 +7,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: #222;
+  //background: #222;
 }
 
 .df {
@@ -24,7 +24,34 @@ body {
   align-items: center;
 }
 
+.sp-bt {
+  justify-content: space-between;
+  align-items: center;
+}
+
 .mat-form-field-autofill-control {
   font-size: 1.1rem !important;
-  color: white !important; // your prefered color
+  //color: white !important; // your prefered color
+}
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+
+@import "./assets/styles/app-color-palette";
+@import "./assets/styles/app-theme";
+
+// Create the theme objects (a Sass map containing all of the palettes).
+$mat-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$mat-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+// Load core styles which independant from theme
+// It should be included once
+@include app-style-core();
+
+.theme-dark {
+  @include app-theme($mat-dark-theme);
+}
+.theme-light {
+  @include app-theme($mat-light-theme);
 }

@@ -1,14 +1,8 @@
 <div>
-  <div>
-    <mat-toolbar
-      color="primary"
-      class="mat-elevation-z6"
-      style="position: sticky; top: 0"
-    >
-      <span>SmartWorks</span>
-    </mat-toolbar>
-  </div>
-  <div style="height: calc(100vh - 64px); overflow-y: scroll">
-    <app-main-card> </app-main-card>
-  </div>
+  <app-toolbar></app-toolbar>
+  <main class="content">
+    <div style="height: calc(100vh - 64px); overflow-y: scroll">
+      <app-main-card> </app-main-card>
+    </div>
+  </main>
 </div>
