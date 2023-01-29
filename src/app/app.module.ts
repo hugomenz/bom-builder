@@ -9,9 +9,11 @@ import { TableComponent } from './components/table/table.component';
 import { AngularMaterialModule } from './modules/angular-material.module';
 import { ThemeComponent } from './components/theme/theme.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { HeaderToolsComponent } from './components/header-tools/header-tools.component';
+import { DialogComponent } from './components/header-tools/dialog/dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, MainCardComponent, TableComponent, ThemeComponent, ToolbarComponent],
+  declarations: [AppComponent, MainCardComponent, TableComponent, ThemeComponent, ToolbarComponent, HeaderToolsComponent, DialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

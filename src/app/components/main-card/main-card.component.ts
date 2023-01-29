@@ -7,31 +7,30 @@ import { CsvService } from '../../core/services/csv.service';
   templateUrl: './main-card.component.html',
   styleUrls: ['./main-card.component.scss'],
 })
-export class MainCardComponent {
-  //implements OnInit {
+export class MainCardComponent implements OnInit {
   spinner = false;
 
   droppedFile!: File | boolean; // boolean for test. It should be removed when "new List" is implemented
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // mocked file variables
-  //mockedFileData: any;
+  mockedFileData: any;
   //
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   constructor(
     public csv: CsvService,
-    private _storage: LocalStorageService // mocking file service
+    private _storage: LocalStorageService // mocking file service //public dialog: MatDialog
   ) {}
 
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // - delete implements OnInit
   // - delete input directive html component
   // mocking file block
-  /*   ngOnInit() {
+  ngOnInit() {
     let dataFromStorage = this._storage.getObject('droppedFile');
     if (Object.keys(dataFromStorage).length > 0) {
       this.mockedFileData = dataFromStorage;
     }
-  } */
+  }
   //
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -45,4 +44,6 @@ export class MainCardComponent {
   }
 
   onButtonPaste() {}
+
+  /*  */
 }

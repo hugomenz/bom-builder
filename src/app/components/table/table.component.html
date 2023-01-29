@@ -1,15 +1,18 @@
 <div>
-  <!-- filter -->
-  <mat-form-field class="filter" color="warning">
-    <mat-label>Filter</mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      placeholder="Geben Sie den zu suchenden Text ein, um die Tabelle zu filtern"
-      #input
-    />
-  </mat-form-field>
-  <!-- filter -->
+  <div class="table-tools df">
+    <!-- filter -->
+    <mat-form-field class="filter" color="accent">
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Geben Sie den zu suchenden Text ein, um die Tabelle zu filtern"
+        #input
+      />
+    </mat-form-field>
+    <!-- filter -->
+    <app-header-tools></app-header-tools>
+  </div>
 
   <table
     multiTemplateDataRows

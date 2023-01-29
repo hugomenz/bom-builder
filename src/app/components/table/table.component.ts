@@ -35,8 +35,7 @@ import { LocalStorageService } from 'src/app/core/services/localstorage.service'
     ]),
   ],
 })
-export class TableComponent implements OnChanges {
-  //, OnInit {
+export class TableComponent implements OnChanges, OnInit {
   mainCsvData: any;
   dataSource: MatTableDataSource<Item> = new MatTableDataSource<Item>([]);
   displayedColumns = ['pos', 'code', 'desc1', 'desc2', 'dimension', 'quantity'];
@@ -50,7 +49,7 @@ export class TableComponent implements OnChanges {
 
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // mock file variables block
-  //@Input() data!: any;
+  @Input() data!: any;
   //
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -68,7 +67,7 @@ export class TableComponent implements OnChanges {
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // MOCKED FILE BLOCK
   //
-  /*   ngOnInit(): void {
+  ngOnInit(): void {
     this.getMockedData();
   }
 
@@ -79,7 +78,7 @@ export class TableComponent implements OnChanges {
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     });
-  } */
+  }
   //
   //MOCKED FILE BLOCK
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++

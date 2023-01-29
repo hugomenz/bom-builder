@@ -11,6 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const materialModules = [
   MatFormFieldModule,
@@ -24,6 +25,7 @@ const materialModules = [
   MatInputModule,
   MatIconModule,
   MatSlideToggleModule,
+  MatDialogModule,
 ];
 
 @NgModule({
