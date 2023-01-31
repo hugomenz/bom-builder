@@ -1,0 +1,36 @@
+.content {
+  //background-color: #aaa;
+  border-top: 1px solid #777;
+  border-bottom: 1px solid #777;
+  & h3 {
+    margin-left: 1rem;
+  }
+}
+
+.container {
+}
+
+.left {
+  padding: 8px;
+  //border: 1px solid red;
+  width: 20%;
+}
+
+.right {
+  padding: 8px;
+  width: 30%;
+  //border: 1px solid blue;
+}
+
+.label {
+  font-size: 10px;
+  font-style: italic;
+}
+
+.desc {
+  margin-bottom: 8px;
+}
+
+span {
+  margin-left: 8px;
+}

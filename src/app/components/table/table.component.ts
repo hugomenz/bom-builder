@@ -18,6 +18,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Item } from 'src/app/core/interfaces/item';
 import { CsvService } from 'src/app/core/services/csv.service';
+import { DataService } from 'src/app/core/services/data.service';
 import { LocalStorageService } from 'src/app/core/services/localstorage.service';
 
 @Component({
@@ -35,7 +36,8 @@ import { LocalStorageService } from 'src/app/core/services/localstorage.service'
     ]),
   ],
 })
-export class TableComponent implements OnChanges, OnInit {
+export class TableComponent implements OnChanges {
+  //, OnInit {
   mainCsvData: any;
   dataSource: MatTableDataSource<Item> = new MatTableDataSource<Item>([]);
   displayedColumns = ['pos', 'code', 'desc1', 'desc2', 'dimension', 'quantity'];
@@ -49,11 +51,15 @@ export class TableComponent implements OnChanges, OnInit {
 
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // mock file variables block
-  @Input() data!: any;
+  //@Input() data!: any;
   //
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  constructor(public csv: CsvService, private _storage: LocalStorageService) {}
+  constructor(
+    public csv: CsvService,
+    private _storage: LocalStorageService,
+    public _data: DataService
+  ) {}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -67,7 +73,7 @@ export class TableComponent implements OnChanges, OnInit {
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // MOCKED FILE BLOCK
   //
-  ngOnInit(): void {
+  /*   ngOnInit(): void {
     this.getMockedData();
   }
 
@@ -78,14 +84,15 @@ export class TableComponent implements OnChanges, OnInit {
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     });
-  }
+  } */
   //
   //MOCKED FILE BLOCK
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
   getData(files: any) {
     this.csv.csvParser(files).then((result) => {
       this.mainCsvData = result;
-
+      this._data.saveTableData(this.mainCsvData); // to general service
       this.dataSource = new MatTableDataSource<Item>(this.mainCsvData);
       setTimeout(() => {
         this.dataSource.sort = this.sort;

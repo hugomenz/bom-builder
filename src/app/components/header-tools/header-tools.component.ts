@@ -12,7 +12,7 @@ export class HeaderToolsComponent {
 
   openDialog(): void {
     this.dialog.open(DialogComponent, {
-      width: '250px',
+      width: '400px',
     });
   }
 }

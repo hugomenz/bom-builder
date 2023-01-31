@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/core/services/data.service';
 import { LocalStorageService } from 'src/app/core/services/localstorage.service';
 import { CsvService } from '../../core/services/csv.service';
 
@@ -7,7 +8,8 @@ import { CsvService } from '../../core/services/csv.service';
   templateUrl: './main-card.component.html',
   styleUrls: ['./main-card.component.scss'],
 })
-export class MainCardComponent implements OnInit {
+export class MainCardComponent {
+  // implements OnInit {
   spinner = false;
 
   droppedFile!: File | boolean; // boolean for test. It should be removed when "new List" is implemented
@@ -18,19 +20,21 @@ export class MainCardComponent implements OnInit {
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   constructor(
     public csv: CsvService,
-    private _storage: LocalStorageService // mocking file service //public dialog: MatDialog
+    //private _storage: LocalStorageService, // mocking file service //public dialog: MatDialog
+    public data: DataService
   ) {}
 
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // - delete implements OnInit
   // - delete input directive html component
   // mocking file block
-  ngOnInit() {
+  /*   ngOnInit() {
     let dataFromStorage = this._storage.getObject('droppedFile');
     if (Object.keys(dataFromStorage).length > 0) {
       this.mockedFileData = dataFromStorage;
+      this.data.saveTableData(this.mockedFileData);
     }
-  }
+  } */
   //
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

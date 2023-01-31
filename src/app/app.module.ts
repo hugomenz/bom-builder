@@ -11,14 +11,27 @@ import { ThemeComponent } from './components/theme/theme.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HeaderToolsComponent } from './components/header-tools/header-tools.component';
 import { DialogComponent } from './components/header-tools/dialog/dialog.component';
+import { FormMetadataComponent } from './components/header-tools/form-metadata/form-metadata.component';
+import { BomInfoComponent } from './components/bom-info/bom-info.component';
 
 @NgModule({
-  declarations: [AppComponent, MainCardComponent, TableComponent, ThemeComponent, ToolbarComponent, HeaderToolsComponent, DialogComponent],
+  declarations: [
+    AppComponent,
+    MainCardComponent,
+    TableComponent,
+    ThemeComponent,
+    ToolbarComponent,
+    HeaderToolsComponent,
+    DialogComponent,
+    FormMetadataComponent,
+    BomInfoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,93 @@
+<form class="my-form df fcol" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="st-name">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Stückliste Name</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="name"
+        [(ngModel)]="formData.name"
+      />
+      <mat-hint>Stückliste, Mengeliste, Sägeliste...</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="pr-num">
+    <mat-form-field class="half-width" appearance="outline">
+      <mat-label>STL-Nr</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="bomNumber"
+        [(ngModel)]="formData.bomNumber"
+      />
+      <mat-hint>Ihre Nummerierung...</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="half-width" appearance="outline">
+      <mat-label>Projekt Nummer</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="projectNumber"
+        [(ngModel)]="formData.projectNumber"
+      />
+      <mat-hint>Ihre Projekt ID Nummer</mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="desc">
+    <mat-form-field class="half-width" appearance="outline">
+      <mat-label>Beschreibung 1</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="desc1"
+        [(ngModel)]="formData.desc1"
+      />
+      <mat-hint>Text 1</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="half-width" appearance="outline">
+      <mat-label>Beschreibung 2</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="desc2"
+        [(ngModel)]="formData.desc2"
+      />
+      <mat-hint>Text 2</mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="pr-name">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Projekt Name</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="projectName"
+        [(ngModel)]="formData.projectName"
+      />
+      <mat-hint>Projekt Beschreibung</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="extra">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Extra</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="extra"
+        [(ngModel)]="formData.extra"
+      />
+      <mat-hint>Extra info...</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="btn-box">
+    <button mat-button mat-dialog-close>Zurück</button>
+    <button mat-raised-button mat-dialog-close type="submit" color="primary">
+      Speichern
+    </button>
+  </div>
+</form>

@@ -16,11 +16,25 @@
       }
     }
   }
+  app-bom-info {
+    .content {
+    }
+
+    h3,
+    span {
+      color: mat-color($foreground, text);
+    }
+  }
 }
 
 @mixin app-root-typography($config) {
   app-root {
     h1 {
+      @include mat-typography-level-to-styles($config, title);
+    }
+  }
+  app-bom-info {
+    h2 {
       @include mat-typography-level-to-styles($config, title);
     }
   }
