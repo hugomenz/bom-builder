@@ -25,6 +25,8 @@
   @include mat-table-theme($theme);
   @include mat-paginator-theme($theme);
   @include mat-icon-theme($theme);
+  @include mat-button-theme($theme);
+  @include mat-dialog-theme($theme);
 
   // Costom themes for components
   @include app-root-theme($theme);
